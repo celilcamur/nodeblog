@@ -1,0 +1,46 @@
+<!--==========================
+    INSIDE HERO SECTION Section
+============================-->
+<section class="page-image page-image-about md-padding">
+	<h1 class="text-white text-center">KİŞİSEL BİLGİLER</h1>
+</section>
+
+<!--==========================
+    ABOUTUS Section
+============================-->
+<section id="aboutus" class="md-padding">
+	<div class="container">
+
+		{{> admin-nav}}
+		<div class="clearfix"></div>
+		<div class="mb-5"></div>
+		<div class="row">
+		
+			<div class="col-md-12">
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Kullanıcı Adı</th>
+							<th>E-mail</th>
+							<th>Telefon Numarası</th>
+							<th>Şifre</th>
+							<th>Düzenle</th>
+						</tr>
+					</thead>
+					<tbody>
+						{{#each users}}
+						<tr>
+							<td>{{userName}}</td>
+							<td>{{email}}</td>
+							<td>{{phoneNumber}}</td>
+							<td>******</td>
+							<td>  <a class="btn btn-warning" href="/admin/users/edit/{{id}}">DÜZENLE</a> </td>
+						</tr>
+						{{/each}}
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+	</div>
+</section>

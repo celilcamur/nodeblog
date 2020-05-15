@@ -1,0 +1,77 @@
+<!--==========================
+    INSIDE HERO SECTION Section
+============================-->
+<section class="page-image page-image-blog md-padding">
+	<h1 class="text-white text-center">İLANLAR</h1>
+</section>
+
+<!--==========================
+    Contact Section
+============================-->
+<section id="blog" class="md-padding">
+	<div class="container">
+		<div class="row">
+			<main id="main" class="col-md-8">
+				{{#if sessionFlash.message}}
+				<div class="{{sessionFlash.type}}">
+					{{sessionFlash.message}}
+				</div>
+				{{/if}}
+				<div class="row">
+					{{#each posts}}
+					<div class="col-md-6">
+						<div class="blog">
+							<div class="blog-img" style="width: 270px ; height: 270px">
+								<img src="{{post_image}}" class="img-fluid">
+							</div>
+							<div class="blog-content">
+								<ul class="blog-meta">
+									<li><i class="fas fa-users"></i><span class="writer">{{author.userName}}</span></li>
+									<li><i class="fas fa-clock"></i><span
+											class="writer">{{generateDate date 'MMM DD YYYY'}}</span></li>
+									<li><i class="fas fa-comments"></i><span class="writer">13</span></li>
+								</ul>
+								<h3>{{title}} - FİYAT:{{kitapFiyat}} TL</h3>
+								<h4>ŞEHİR: {{kitapSehir}}</h4>
+								<h4>Kitap Adı/Yazar : {{kitapAdi}} - {{yazarAdi}}</h4>
+								<h4>{{categories.name}}</h4>
+								<h5>Baskı Yılı: {{kitapBaskiYili}}</h5>
+								<a href="https://api.whatsapp.com/send?phone=9{{author.phoneNumber}}"><h4 style="color: #1e7e34;">İletişime Geç</h4></a>
+								{{!-- <a href="https://wa.me/9{{author.phoneNumber}}"><h4 style="color: blue;">İletişime Geç</h4> <i class="fa fa-whatsapp" aria-hidden="true"></i></a> --}}
+								<p>{{truncate content 50 }}</p>
+
+								<a href="/posts/{{_id}}">Daha fazlasını gör...</a>
+							</div>
+						</div>
+					</div>
+					{{/each}}
+
+
+			{{!-- 		<nav aria-label="Page navigation example">
+						<ul class="pagination justify-content-center">
+							<li class="page-item disabled">
+								<a class="page-link" href="#" tabindex="-1">ÖNCEKİ</a>
+							</li>
+							<li class="page-item"><a class="page-link" href="#">1</a></li>
+							<li class="page-item"><a class="page-link" href="#">2</a></li>
+							<li class="page-item"><a class="page-link" href="#">3</a></li>
+							<li class="page-item">
+								<a class="page-link" href="#">SONRAKİ</a>
+							</li>
+						</ul>
+					</nav> --}}
+				</div>
+			</main>
+
+
+			<!-- Category -->
+			{{> site-sitebar}}
+			<!-- /Category -->
+
+
+
+
+		</div>
+
+	</div>
+</section>

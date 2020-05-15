@@ -1,0 +1,94 @@
+
+
+<!--==========================
+    INSIDE HERO SECTION Section
+============================-->	
+<section class="page-image page-image-contact md-padding">
+    <h1 class="text-white text-center">İLAN DÜZENLE</h1>
+</section>
+    
+    <!--==========================
+    Contact Section
+============================-->
+<section id="contact" class="md-padding">
+	<div class="container">
+
+			<div class="row text-center">
+				<div class="col-md-4 offset-md-4">
+					<div class="section-header">
+						<h2 class="title">İLAN DÜZENLE</h2>
+					</div>
+				</div>
+			</div>
+
+		<div class="row">
+			<div class="col-lg-12">
+				<form action="/admin/posts/{{post.id}}?_method=PUT" method="POST" enctype="multipart/form-data">
+					<input type="hidden" name="_method" value="PUT">
+					<div class="row">
+						<div class="offset-2 col-md-8">
+							<div class="form-group"> <h3>Başlık:</h3>
+								<input class="form-control" name="title" type="text" value="{{post.title}}" required="required" data-validation-required-message="Lütfen ilan başlığını giriniz">
+								<p class="help-block text-danger"></p>
+							</div>
+                            <div class="form-group"> <h3>Kitap Adı:</h3>
+								<input class="form-control" name="kitapAdi" type="text" value="{{post.kitapAdi}}" required="required" data-validation-required-message="Lütfen kitap adını giriniz">
+								<p class="help-block text-danger"></p>
+							</div>
+							
+							<div class="form-group"> <h3>Yazar Adı:</h3>
+								<input class="form-control" name="yazarAdi" type="text" value="{{post.yazarAdi}}" required="required" data-validation-required-message="Lütfen yazar adını giriniz">
+								<p class="help-block text-danger"></p>
+							</div>
+							<div class="form-group"> <h3>Açıklama:</h3>
+								<textarea class="form-control" name="content"  required="required" data-validation-required-message="Lütfen ilan açıklamanızı giriniz.">{{post.content}}</textarea>
+								<p class="help-block text-danger"></p>
+							</div>
+							<div class="form-group " > <h3>Kitap Fotoğrafı:</h3>
+								<input class="form-control" name="post_image" type="file"  required="required" >
+								<p class="help-block text-danger"></p>
+							</div>
+							<div class="form-group"> <h3>Kitap Kategori:</h3>
+									<select class="form-control" name="Category">
+										{{#each categories}}
+
+										<option value="{{id}}">{{name}}</option>
+										{{/each}}
+
+									</select>
+
+
+								{{!-- <select name="kitapKategori">
+  										<option value="Roman">Roman</option>
+  										<option value="Hikaye">Hikaye</option>
+ 										<option value="Akademi">Akademi</option>
+										<option value="Kişisel Gelişim">Kişisel Gelişim</option>
+                                   </select>								
+								<p class="help-block text-danger"></p> --}}
+							</div>
+								<div class="form-group"> <h3>Baskı Yılı:</h3>
+								<input class="form-control" name="kitapBaskiYili" type="text" value="{{post.kitapBaskiYili}}" required="required" data-validation-required-message="Lütfen kitabın baskı yılını giriniz">
+								<p class="help-block text-danger"></p>
+							</div>
+							<div class="form-group"> <h3>Şehir:</h3>
+								<input class="form-control" name="kitapSehir" type="text" value="{{post.kitapSehir}}" required="required" data-validation-required-message="Lütfen ilan şehrini giriniz">
+								<p class="help-block text-danger"></p>
+							</div>
+							<div class="form-group"> <h3>Fiyat:</h3>
+								<input class="form-control" name="kitapFiyat" type="text" value="{{post.kitapFiyat}}" required="required" data-validation-required-message="Lütfen ilan fiyatınızı giriniz">
+								<p class="help-block text-danger"></p>
+							</div>
+						</div>
+					
+						<div class="clearfix"></div>
+						<div class="col-lg-12 text-center">
+							<div id="success"></div>
+							<button  class="main-btn" type="submit">İLAN DÜZENLE</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+
+	</div>
+</section>

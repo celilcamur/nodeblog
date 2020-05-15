@@ -1,0 +1,73 @@
+<!--==========================
+    INSIDE HERO SECTION Section
+============================-->
+<section class="page-image page-image-contact md-padding">
+	<h1 class="text-white text-center">İLAN DETAY</h1>
+</section>
+
+<!--==========================
+    Contact Section
+============================-->
+<section id="blog" class="md-padding">
+	<div class="container">
+		<div class="row">
+			<main id="main" class="col-md-8">
+				<div class="blog">
+					<div class="blog-img">
+						<img class="img-fluid" src="{{post.post_image}}" alt="">
+					</div>
+					<div class="blog-content">
+						<ul class="blog-meta">
+							<li><i class="fas fa-user"></i>{{post.author.userName}}</li>
+							<li><i class="fas fa-clock"></i>{{generateDate post.date 'MMM DD YYYY'}}</li>
+							<li><i class="fas fa-comments"></i>57</li>
+						</ul>
+						<h1>{{post.title}} -- FİYAT:{{post.kitapFiyat}} TL </h1>
+						<h3>Kitap Adı/Yazar : {{post.kitapAdi}} - {{post.yazarAdi}}</h4>
+							<h4>ŞEHİR: {{post.kitapSehir}}</h4>
+							<h4>KİTAP KATEGORİ: {{post.Category}} -- Baskı Yılı: {{post.kitapBaskiYili}}</h4>
+							<p>{{post.content}}</p>
+					</div>
+
+
+					<!-- blog comments -->
+					<div class="blog-comments">
+						<h3>(1) Yorumlar</h3>
+
+						<!-- comment -->
+						<div class="media">
+							<div class="media-body">
+								<h4 class="media-heading">Celil Çamur<span class="time">1 Saat Önce</span></h4>
+								<p>Merhaba, ilanın kozmetik durumu nasıldır? Fiyatta pazarlık payı mevcut mudur?</p>
+							</div>
+						</div>
+						<!-- /comment -->
+
+					</div>
+					<!-- /blog comments -->
+
+					<!-- reply form -->
+					<div class="reply-form">
+						<h3>İlan hakkında soru sor, yorum yap. </h3>
+						<form>
+							<input class="form-control mb-4" type="text" placeholder="İsim">
+							<input class="form-control mb-4" type="email" placeholder="Mail Adresiniz">
+							<textarea class="form-control mb-4" row="5" placeholder="Bir Yorum Ekle"></textarea>
+
+							<button type="submit" class="main-btn">Yorumunu Gönder</button>
+						</form>
+					</div>
+					<!-- /reply form -->
+				</div>
+			</main>
+			<!-- /Main -->
+
+			<!-- Category -->
+			{{> site-sitebar}}
+			<!-- /Category -->
+
+
+		</div>
+
+	</div>
+</section>

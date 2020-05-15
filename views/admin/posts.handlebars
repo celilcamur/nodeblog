@@ -1,0 +1,65 @@
+<!--==========================
+    INSIDE HERO SECTION Section
+============================-->
+<section class="page-image page-image-about md-padding">
+	<h1 class="text-white text-center">İLAN DÜZENLE</h1>
+</section>
+
+<!--==========================
+    ABOUTUS Section
+============================-->
+<section id="aboutus" class="md-padding">
+	<div class="container">
+
+		{{> admin-nav}}
+		<div class="clearfix"></div>
+		<div class="mb-5"></div>
+		<div class="row">
+		
+			<div class="col-md-12">
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Başlık</th>
+							<th>Kitap Adı</th>
+							<th>Yazar Adı</th>
+							<th>İçerik</th>
+							<th>Kategori Adı</th>
+							<th>Baskı Yılı</th>
+							<th>İlan İli</th>
+							<th>İlan Fiyat</th>
+							<th>Düzenle</th>
+							<th>SİL</th>
+						</tr>
+					</thead>
+					<tbody>
+						{{#each posts}}
+						<tr>
+							<td>{{title}}</td>
+							<td>{{kitapAdi}}</td>
+							<td>{{yazarAdi}}</td>
+							<td>{{content}}</td>
+							<td>{{category.name}}</td>
+							<td>{{kitapBaskiYili}}</td>
+							<td>{{kitapSehir}}</td>
+							<td>{{kitapFiyat}} TL</td>
+							<td>  <a class="btn btn-warning" href="/admin/posts/edit/{{id}}">DÜZENLE</a> </td>
+							<td>
+								
+								<form action="/admin/posts/{{id}}?_method=DELETE" method="POST">
+									<input type="hidden" name="_method" value="DELETE">
+									<button type="submit" class="btn btn-danger">SİL</button>
+
+								</form></td>
+							<td>
+							
+							</td>
+						</tr>
+						{{/each}}
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+	</div>
+</section>
